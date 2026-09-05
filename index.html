@@ -1,1 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOP - Management des Organisations Paysannes | USSEIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f382c;
+            --primary-light: #1b5e48;
+            --accent: #2e7d32;
+            --gold: #fbc02d;
+            --gold-hover: #f57f17;
+            --dark-bg: #0a1f18;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-light: #e0e0e0;
+            --white: #ffffff;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0d281e 50%, #05140e 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background: rgba(10, 31, 24, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(251, 192, 45, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .site-logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text span strong {
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+
+        .btn-portail {
+            background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+            color: #000 !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-portail:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(251, 192, 45, 0.4);
+        }
+
+        /* SECTION HÉROS */
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(251, 192, 45, 0.15);
+            color: var(--gold);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid rgba(251, 192, 45, 0.3);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #b0bec5;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+        }
+
+        /* CHIFFRES CLÉS / STATS */
+        .stats-container {
+            max-width: 1200px;
+            margin: -2rem auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #b0bec5;
+        }
+
+        /* SECTION PRESENTATION ET PILIERS */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        .grid-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pillar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-card h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #b0bec5;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #05140e;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            padding: 2rem;
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENTÊTE & NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">
+                <img src="logo.png" alt="Logo USSEIN MOP" class="site-logo">
+                <span>MOP <strong>USSEIN</strong></span>
+            </a>
+            <nav>
+                <a href="index.html" class="active">Accueil</a>
+                <a href="filiere.html">La Filière</a>
+                <a href="objectifs.html">Objectifs</a>
+                <a href="programme.html">Programme</a>
+                <a href="debouches.html">Débouchés</a>
+                <a href="https://gpe.ussein.sn/" target="_blank" rel="noopener noreferrer" class="btn-portail">Espace Étudiants ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION HÉROS -->
+    <section class="hero">
+        <span class="hero-badge">Université Sine Saloum El-Hadj Ibrahima NIASS</span>
+        <h1>Licence en Management des <span>Organisations Paysannes</span></h1>
+        <p>Formez-vous aux enjeux de la gouvernance agricole, du conseil rural, de la gestion des coopératives et de la valorisation des chaînes de valeur agroécologiques au Sénégal.</p>
+        <div class="hero-buttons">
+            <a href="filiere.html" class="btn-primary">Découvrir la Filière</a>
+            <a href="programme.html" class="btn-primary" style="background: transparent; border-color: var(--gold); color: var(--gold);">Voir le Programme</a>
+        </div>
+    </section>
+
+    <!-- CHIFFRES CLÉS -->
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="stat-number">3 Ans</div>
+            <div class="stat-label">Formation de Licence Pro</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Ancrage Rurale & Terrain</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">+10</div>
+            <div class="stat-label">Secteurs d'Insertion Pro</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">USSEIN</div>
+            <div class="stat-label">Pôle d'Excellence Agricole</div>
+        </div>
+    </div>
+
+    <!-- CONTENU PRINCIPAL & PILIERS -->
+    <main class="main-container">
+        <h2 class="section-title">Les Piliers de la Formation</h2>
+        
+        <div class="grid-pillars">
+            <div class="pillar-card">
+                <div class="pillar-icon">🏛️</div>
+                <h3>Gouvernance & Droit Agricole</h3>
+                <p>Maîtrise du cadre juridique OHADA des coopératives, structuration des GIE, des fédérations et gestion transparente des comités d'organisations paysannes.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">🌾</div>
+                <h3>Agroécologie & Conseil Rural</h3>
+                <p>Accompagnement des producteurs vers des pratiques durables, gestion de la santé des sols et adaptation au changement climatique dans le Sine Saloum.</p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon">📊</div>
+                <h3>Gestion Financière & Projets</h3>
+                <p>Planification stratégique, recherche de financements, comptabilité agricole et gestion de projets de développement rural.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+        <p>&copy; 2026 MOP USSEIN - Université Sine Saloum El-Hadj Ibrahima NIASS. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
