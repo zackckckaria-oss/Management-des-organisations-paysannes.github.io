@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme & Maquette | MOP USSEIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #1b4332; --primary-light: #2d6a4f; --accent: #52b788; --gold: #d4af37; --bg-light: #f8faf8; --text-dark: #1a251e; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; }
+        header { background: rgba(27, 67, 50, 0.98); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--gold); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo-text { color: var(--white); font-weight: 800; font-size: 1.3rem; text-decoration: none; }
+        .logo-text span { color: var(--gold); }
+        nav a { color: var(--white); text-decoration: none; font-weight: 600; margin-left: 1.5rem; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--accent); }
+        .btn-portail { background: linear-gradient(135deg, var(--gold), #b89320); color: var(--primary) !important; padding: 0.6rem 1.2rem; border-radius: 30px; font-weight: 700; text-decoration: none; display: inline-block; }
+        .hero { background: linear-gradient(135deg, rgba(27, 67, 50, 0.92), rgba(45, 106, 79, 0.85)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1350&q=80') center/cover; color: var(--white); padding: 5rem 2rem; text-align: center; }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; }
+        .main-container { max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem; }
+        .card { background: var(--white); border-radius: 16px; padding: 3rem; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-top: 4px solid var(--accent); }
+        .card h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem; }
+        .level-box { background: #f0f7f4; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; border-left: 5px solid var(--accent); }
+        .level-title { color: var(--primary); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 10px; }
+        footer { background: var(--primary); color: var(--white); text-align: center; padding: 3rem 1rem; border-top: 4px solid var(--gold); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">MOP <span>USSEIN</span></a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="filiere.html">La Filière</a>
+                <a href="objectifs.html">Objectifs</a>
+                <a href="programme.html" class="active">Programme</a>
+                <a href="debouches.html">Débouchés</a>
+                <a href="https://gpe.ussein.sn/" target="_blank" rel="noopener noreferrer" class="btn-portail">Espace Étudiants ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>📚 Maquette Pédagogique (Programme)</h1>
+    </section>
+
+    <div class="main-container">
+        <section class="card">
+            <h2>Programme complet issu de la maquette officelle</h2>
+
+            <div class="level-box">
+                <div class="level-title">🔹 Licence 1 (L1) — Fondations & Immersion</div>
+                <ul>
+                    <li><strong>DOP 1150 :</strong> Développement rural et organisations paysannes (Principes du développement, Histoire et typologie des OP)</li>
+                    <li><strong>BSA 1151 :</strong> Bases en Sociologie et Anthropologie</li>
+                    <li><strong>CAR 1152 :</strong> Conseil agricole et rural (Conseil & Vulgarisation agricole)</li>
+                    <li><strong>BCD 1153 :</strong> Communication pour le développement</li>
+                    <li><strong>MTR 1154 :</strong> Méthodes et techniques de recherche en sciences sociales</li>
+                    <li><strong>COP 1250 :</strong> Connaissances des organisations paysannes (Théories & Diagnostic des OP)</li>
+                    <li><strong>SER 1251 :</strong> Sociologie et Économie rurale</li>
+                    <li><strong>CFO 1254 :</strong> Comptabilité et financement des organisations</li>
+                </ul>
+            </div>
+
+            <div class="level-box">
+                <div class="level-title">🔹 Licence 2 (L2) — Structuration & Outils de Gestion</div>
+                <ul>
+                    <li><strong>SOP 2350 :</strong> Structuration des Organisations Paysannes (Typologie du Management & Sociologie)</li>
+                    <li><strong>GAO 2351 :</strong> Gestion administrative des organisations (GRH, Droit Social, Audit organisationnel)</li>
+                    <li><strong>PAR 2352 :</strong> Politiques agricoles et rurales (Sous-régionales & Négociations)</li>
+                    <li><strong>ERC 2353 :</strong> Économie rurale et Comptabilité</li>
+                    <li><strong>COP 2450 :</strong> Capacitation des OP (Planification stratégique)</li>
+                    <li><strong>TAO 2451 :</strong> Techniques d’accompagnement des OP (Élaboration de projets, Partenariats)</li>
+                    <li><strong>DCV 2452 :</strong> Développement local et chaînes de valeurs</li>
+                    <li><strong>GFA 2453 :</strong> Gestion foncière et aménagement du territoire</li>
+                </ul>
+            </div>
+
+            <div class="level-box">
+                <div class="level-title">🔹 Licence 3 (L3) — Expertise, Audit & Fin de Cycle</div>
+                <ul>
+                    <li><strong>FOP 3550 :</strong> Fonctionnement et gouvernance des organisations paysannes</li>
+                    <li><strong>PSO 3551 :</strong> Psycho-sociologie des organisations (Psychologie de groupe, Négociation)</li>
+                    <li><strong>GPM 3552 :</strong> Gestion de projet et Marketing social</li>
+                    <li><strong>ACP 3555 :</strong> Audit financier des organisations et construction de partenariats</li>
+                    <li><strong>ROP 3651 :</strong> Renforcement des OP (Entrepreneuriat, Suivi-Évaluation, Andragogie)</li>
+                    <li><strong>CSA 3652 :</strong> Connaissance des services d'appui aux ruraux (Assurances agricoles, Intrants & Équipements)</li>
+                    <li><strong>RFC 3653 :</strong> Rapport de Fin de Cycle (Rédaction et Soutenance de mémoire/stage)</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© USSEIN — Université Sine Saloum El-Hadj Ibrahima NIASS</p>
+    </footer>
+</body>
+</html>
