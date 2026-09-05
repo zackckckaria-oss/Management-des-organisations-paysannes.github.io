@@ -1,1 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objectifs de la Formation | MOP - USSEIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f382c;
+            --primary-light: #1b5e48;
+            --accent: #2e7d32;
+            --gold: #fbc02d;
+            --gold-hover: #f57f17;
+            --dark-bg: #0a1f18;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-light: #e0e0e0;
+            --white: #ffffff;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0d281e 50%, #05140e 100%);
+            color: var(--text-light);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background: rgba(10, 31, 24, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(251, 192, 45, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .site-logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            background-color: #ffffff;
+            padding: 4px 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text span strong {
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+
+        .btn-portail {
+            background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+            color: #000 !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-portail:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(251, 192, 45, 0.4);
+        }
+
+        /* BANNIÈRE */
+        .page-banner {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            background: rgba(15, 56, 44, 0.4);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .page-banner h1 {
+            font-size: 2.5rem;
+            color: var(--white);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-banner h1 span {
+            color: var(--gold);
+        }
+
+        .page-banner p {
+            color: #b0bec5;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* CONTENU PRINCIPAL */
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-block {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .section-block h2 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-block p {
+            color: #cfd8dc;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: rgba(251, 192, 45, 0.08);
+            border-left: 4px solid var(--gold);
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* LISTES DE COMPÉTENCES */
+        .skills-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: #cfd8dc;
+            font-size: 1.05rem;
+        }
+
+        .skills-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--gold);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        /* GRILLE DES OBJECTIFS SPÉCIFIQUES */
+        .grid-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .obj-card {
+            background: rgba(15, 56, 44, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: transform 0.3s;
+        }
+
+        .obj-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+
+        .obj-card .badge-num {
+            background: var(--gold);
+            color: #000;
+            font-weight: 800;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .obj-card h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .obj-card p {
+            font-size: 0.95rem;
+            color: #b0bec5;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #05140e;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            padding: 2rem;
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENTÊTE & NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">
+                <img src="logo.png" alt="MOP" class="site-logo">
+                <span>MOP <strong>USSEIN</strong></span>
+            </a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="filiere.html">La Filière</a>
+                <a href="objectifs.html" class="active">Objectifs</a>
+                <a href="programme.html">Programme</a>
+                <a href="debouches.html">Débouchés</a>
+                <a href="https://gpe.ussein.sn/" target="_blank" rel="noopener noreferrer" class="btn-portail">Espace Étudiants ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNIÈRE -->
+    <section class="page-banner">
+        <h1>Objectifs de la <span>Formation MOP</span></h1>
+        <p>Une ambition pédagogique forte : façonner les leaders, managers et conseillers qui transformeront le monde rural sénégalais.</p>
+    </section>
+
+    <!-- CONTENU DÉTAILLÉ -->
+    <main class="content-container">
+
+        <!-- OBJECTIF GÉNÉRAL -->
+        <article class="section-block">
+            <h2>🎯 L'Objectif Général du Cursus</h2>
+            <p>
+                La Licence Professionnelle en Management des Organisations Paysannes (MOP) vise à doter les étudiants d'un socle pluridisciplinaire solide combinant **gestion, droit, agronomie et sociologie rurale**. L'objectif ultime est de former des professionnels capables d'impulser une gestion moderne, transparente et performante au sein des structures agricoles locales et nationales.
+            </p>
+            <p>
+                Face aux évolutions économiques, la formation prépare les étudiants à être des moteurs d'innovation au sein des communautés rurales, en aidant les producteurs à mieux structurer leurs activités et à négocier efficacement sur les marchés locaux et internationaux.
+            </p>
+            <div class="highlight-box">
+                <p>📌 Ambition majeure : Faire passer les Organisations Paysannes d'un statut d'économie subsistante à celui d'entreprises rurales performantes et durables.</p>
+            </div>
+        </article>
+
+        <!-- OBJECTIFS SPÉCIFIQUES -->
+        <article class="section-block">
+            <h2>📌 Objectifs Spécifiques de Formation</h2>
+            <p>
+                Le parcours pédagogique est articulé autour de six grands objectifs opérationnels garantissant la polyvalence et l'efficacité sur le terrain :
+            </p>
+
+            <div class="grid-objectives">
+                <div class="obj-card">
+                    <div class="badge-num">1</div>
+                    <h3>Droit & Institutionnel</h3>
+                    <p>Maîtriser le cadre juridique et réglementaire encadrant les sociétés coopératives (notamment l'Acte Uniforme OHADA) et appuyer la création de statuts juridiques conformes.</p>
+                </div>
+
+                <div class="obj-card">
+                    <div class="badge-num">2</div>
+                    <h3>Gestion Financière</h3>
+                    <p>Mettre en place une comptabilité adaptée aux réalités agricoles, réaliser des audits financiers simplifiés et élaborer des budgets prévisionnels réalistes.</p>
+                </div>
+
+                <div class="obj-card">
+                    <div class="badge-num">3</div>
+                    <h3>Ingénierie de Projet</h3>
+                    <p>Concevoir, rédiger et défendre des propositions de projets de développement rural auprès des bailleurs de fonds, banques et Systèmes Financiers Décentralisés (SFD).</p>
+                </div>
+
+                <div class="obj-card">
+                    <div class="badge-num">4</div>
+                    <h3>Commercialisation</h3>
+                    <p>Développer des stratégies d'approvisionnement en intrants, de stockage des récoltes, de transformation agroalimentaire et d'accès direct aux marchés de consommation.</p>
+                </div>
+
+                <div class="obj-card">
+                    <div class="badge-num">5</div>
+                    <h3>Conseil Agroécologique</h3>
+                    <p>Accompagner la transition écologique des exploitations en diffusant des techniques de gestion conservatoire des sols et de préservation de la biodiversité.</p>
+                </div>
+
+                <div class="obj-card">
+                    <div class="badge-num">6</div>
+                    <h3>Médiation & Leadership</h3>
+                    <p>Animer la vie associative des groupements, faciliter les prises de décision démocratiques et prévenir les conflits d'intérêts au sein des unions de producteurs.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- COMPÉTENCES VISÉES -->
+        <article class="section-block">
+            <h2>🧠 Compétences Acquises à la Sortie du Cursus</h2>
+            <p>
+                À l'issue des 3 années de Licence à l'USSEIN, le diplômé en Management des Organisations Paysannes possède un profil recherché et opérationnel :
+            </p>
+
+            <ul class="skills-list">
+                <li><strong>Capacité de diagnostic organisationnel :</strong> Évaluer les forces, faiblesses, opportunités et menaces d'un groupement ou d'une coopérative agricole.</li>
+                <li><strong>Maîtrise des outils numériques ruraux :</strong> Utilisation de logiciels de gestion, collecte de données agricoles sur smartphone et cartographie basique.</li>
+                <li><strong>Conduite de négociations commerciales :</strong> Obtenir les meilleurs prix pour les intrants et défendre les marges des producteurs face aux acheteurs.</li>
+                <li><strong>Montage de dossiers de crédit :</strong> Structurer des demandes de financement adaptées aux cycles de culture et aux réalités du monde rural.</li>
+                <li><strong>Animation et communication sociale :</strong> Animer une assemblée générale, rédiger des comptes-rendus et vulgariser des informations techniques en langues nationales.</li>
+            </ul>
+        </article>
+
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+        <p>&copy; 2026 MOP USSEIN - Université Sine Saloum El-Hadj Ibrahima NIASS. Tous droits réservés.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #b0bec5;">
+            Créé par <strong>Zacharia Bakary</strong> (<a href="mailto:zackckckaria@gmail.com" style="color: var(--gold); text-decoration: none;">zackckckaria@gmail.com</a>)
+        </p>
+    </footer>
+
+</body>
+</html>
