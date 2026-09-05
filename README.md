@@ -8,7 +8,7 @@ Bienvenue sur le dépôt officiel de la filière **Management des Organisations 
 
 ## 🔗 Accès Rapides
 
-* 🎓 **Espace Étudiants GPE USSEIN :** [Accéder au portail gpe.ussein.sn](https://gpe.ussein.sn/)
+* 🎓 **Espace Étudiants GPE USSEIN :** [Accéder au portail gpe.ussein.sn](https://etudiant.ussein.edu.sn/)
 
 ---
 
@@ -65,3 +65,4 @@ La formation s'étale sur 6 semestres (Licence 1 à Licence 3) et combine cours 
 * **Établissement :** Université Sine Saloum El-Hadj Ibrahima NIASS (USSEIN) — Kaolack / Fatick / Kaffrine, Sénégal
 * **Filière :** Management des Organisations Paysannes (MOP)
 * **contact :**zackckckaria@gmail.com**
+* **Club des Managers :**clubdesmanagers7@gmail.com**
