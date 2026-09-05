@@ -83,3 +83,16 @@ Le site est hébergé via **GitHub Pages** à partir de fichiers HTML/CSS statiq
 ├── debouches.html       # Opportunités de carrière & secteurs d'embauche
 ├── logo.png            # Logo officiel du programme MOP USSEIN
 └── README.md           # Documentation du projet
+---
+
+## 📬 Contact & Informations Pratiques
+
+Pour toute information complémentaire concernant la filière MOP, les admissions ou les partenariats :
+
+* **Institution :** Université Sine Saloum El-Hadj Ibrahima NIASS (USSEIN)
+* **Campus / UFR :** UFR Sciences sociales et environnementales
+* **Site Web Officiel :** [ussein.sn](https://ussein.sn)
+* **Portail Étudiant :** [gpe.ussein.sn](https://gpe.ussein.sn/)
+* **Localisation :** Kaffrine, Sénégal 🇸🇳
+* **Contact :**zackckckaria@gmail.com
+* **Club des Managers :**clubdesmanagers7@gmail.com
