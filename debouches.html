@@ -1,1 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débouchés Professionnels | MOP - USSEIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f382c;
+            --primary-light: #1b5e48;
+            --accent: #2e7d32;
+            --gold: #fbc02d;
+            --gold-hover: #f57f17;
+            --dark-bg: #0a1f18;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-light: #e0e0e0;
+            --white: #ffffff;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0d281e 50%, #05140e 100%);
+            color: var(--text-light);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(10, 31, 24, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(251, 192, 45, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .site-logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            background-color: #ffffff;
+            padding: 4px 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text span strong {
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+
+        .btn-portail {
+            background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+            color: #000 !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-portail:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(251, 192, 45, 0.4);
+        }
+
+        .page-banner {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            background: rgba(15, 56, 44, 0.4);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .page-banner h1 {
+            font-size: 2.5rem;
+            color: var(--white);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-banner h1 span {
+            color: var(--gold);
+        }
+
+        .page-banner p {
+            color: #b0bec5;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-block {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .section-block h2 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .grid-careers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .career-card {
+            background: rgba(15, 56, 44, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: transform 0.3s;
+        }
+
+        .career-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+        }
+
+        .career-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .career-card h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .career-card p {
+            color: #b0bec5;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .sectors-list {
+            list-style: none;
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .sectors-list li {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            color: #cfd8dc;
+            font-size: 0.98rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sectors-list li::before {
+            content: "🏢";
+        }
+
+        footer {
+            background: #05140e;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            padding: 2rem;
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">
+                <img src="logo.png" alt="MOP" class="site-logo">
+                <span>MOP <strong>USSEIN</strong></span>
+            </a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="filiere.html">La Filière</a>
+                <a href="objectifs.html">Objectifs</a>
+                <a href="programme.html">Programme</a>
+                <a href="debouches.html" class="active">Débouchés</a>
+                <a href="https://gpe.ussein.sn/" target="_blank" rel="noopener noreferrer" class="btn-portail">Espace Étudiants ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <h1>Débouchés & <span>Carrières MOP</span></h1>
+        <p>Une formation ancrée dans la réalité du marché du travail, offrant de multiples opportunités d'insertion professionnelle au Sénégal et en Afrique.</p>
+    </section>
+
+    <main class="content-container">
+
+        <!-- MÉTIES VISÉS -->
+        <article class="section-block">
+            <h2>💼 Les Métiers Accessibles après la Licence</h2>
+            <p>
+                Les diplômés du parcours Management des Organisations Paysannes développent un profil polyvalent particulièrement apprécié pour leur capacité à lier compétences de gestion et connaissance fine du monde rural.
+            </p>
+
+            <div class="grid-careers">
+                <div class="career-card">
+                    <div class="career-icon">🏛️</div>
+                    <h3>Gérant de Coopérative / Union</h3>
+                    <p>Supervision administrative et financière des unions de producteurs, gestion des assemblées et représentation auprès des partenaires.</p>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-icon">🌾</div>
+                    <h3>Conseiller en Gestion d'Exploitations</h3>
+                    <p>Accompagnement des producteurs dans la tenue de comptabilité simplifiée, le calcul des coûts de revient et le choix des investissements.</p>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-icon">📋</div>
+                    <h3>Chargé de Projets de Développement Rural</h3>
+                    <p>Conception, exécution et suivi-évaluation de programmes d'appui à l'agriculture familiale au sein d'ONG nationales ou internationales.</p>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-icon">🏦</div>
+                    <h3>Agent de Credit Agricole / SFD</h3>
+                    <p>Analyse des demandes de financement des groupements paysannaux, évaluation des risques et suivi des remboursements en microfinance.</p>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-icon">🚚</div>
+                    <h3>Responsable Commercial & Approvisionnement</h3>
+                    <p>Gestion des intrants (semences, engrais) et négociation des contrats de vente groupée pour les récoltes.</p>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-icon">🚀</div>
+                    <h3>Agri-Entrepreneur</h3>
+                    <p>Création et direction de sa propre entreprise agricole moderne, unité de transformation de produits locaux ou cabinet de conseil rural.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECTEURS RECRUTEURS -->
+        <article class="section-block">
+            <h2>🏢 Les Secteurs Recruteurs</h2>
+            <p>
+                À l'issue de leur formation, les étudiants peuvent être recrutés dans une large variété d'organisations publiques, privées et associatives :
+            </p>
+
+            <ul class="sectors-list">
+                <li>Sociétés Coopératives & Unions d'OP</li>
+                <li>ONG Internationales & Nationales (Développement Rural)</li>
+                <li>Systèmes Financiers Décentralisés (SFD) & Mutuelles</li>
+                <li>Agences d'État & Projets du Ministère de l'Agriculture</li>
+                <li>Sociétés d'Agrobusiness & Distribution d'Intrants</li>
+                <li>Pôles de Transformation Agroalimentaire</li>
+            </ul>
+        </article>
+
+        <!-- POURSUITE D'ÉTUDES -->
+        <article class="section-block">
+            <h2>🎓 Poursuite d'Études supérieures</h2>
+            <p>
+                Pour les diplômés souhaitant poursuivre leur parcours académique, la Licence MOP ouvre l'accès à des **Masters professionnels et de recherche** à l'USSEIN ou dans d'autres universités partenaires, notamment dans les domaines suivants :
+            </p>
+            <p>
+                • Master en Economie Agroalimentaire & Développement Rural<br>
+                • Master en Gestion des Projets Agricoles & Agroécologie<br>
+                • Master en Gouvernance & Droit Foncier Rural
+            </p>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MOP USSEIN - Université Sine Saloum El-Hadj Ibrahima NIASS. Tous droits réservés.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #b0bec5;">
+            Créé par <strong>Zacharia Bakary</strong> (<a href="mailto:zackckckaria@gmail.com" style="color: var(--gold); text-decoration: none;">zackckckaria@gmail.com</a>)
+        </p>
+    </footer>
+
+</body>
+</html>
