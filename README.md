@@ -2,7 +2,7 @@
 > **Université Sine Saloum El-Hadj Ibrahima NIASS (USSEIN) — Sénégal**
 
 
-Bienvenue sur le dépôt officiel de la filière **Management des Organisations Paysannes (MOP)**. Ce projet centralise la présentation de la formation, la structure de la maquette pédagogique et les ressources d'accompagnement des étudiants du secteur agricole et rural.
+Bienvenue sur le site officiel de la filière **Management des Organisations Paysannes (MOP)**. Ce projet centralise la présentation de la formation, la structure de la maquette pédagogique et les ressources d'accompagnement des étudiants du secteur agricole et rural.
 
 ---
 
