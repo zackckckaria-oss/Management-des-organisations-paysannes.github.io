@@ -1,1 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Filière MOP | Management des Organisations Paysannes - USSEIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f382c;
+            --primary-light: #1b5e48;
+            --accent: #2e7d32;
+            --gold: #fbc02d;
+            --gold-hover: #f57f17;
+            --dark-bg: #0a1f18;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-light: #e0e0e0;
+            --white: #ffffff;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0d281e 50%, #05140e 100%);
+            color: var(--text-light);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background: rgba(10, 31, 24, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(251, 192, 45, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .site-logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text span strong {
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+
+        .btn-portail {
+            background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+            color: #000 !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-portail:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(251, 192, 45, 0.4);
+        }
+
+        /* BANNIÈRE EN-TÊTE */
+        .page-banner {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            background: rgba(15, 56, 44, 0.4);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .page-banner h1 {
+            font-size: 2.5rem;
+            color: var(--white);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-banner h1 span {
+            color: var(--gold);
+        }
+
+        .page-banner p {
+            color: #b0bec5;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* CONTENU PRINCIPAL */
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-block {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .section-block h2 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-block p {
+            color: #cfd8dc;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: rgba(251, 192, 45, 0.08);
+            border-left: 4px solid var(--gold);
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* GRILLE DES AXES D'ÉTUDE */
+        .grid-axes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .axis-card {
+            background: rgba(15, 56, 44, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.8rem;
+        }
+
+        .axis-card h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .axis-card p {
+            font-size: 0.95rem;
+            color: #b0bec5;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #05140e;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            padding: 2rem;
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENTÊTE & NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">
+                <img src="logo.png" alt="MOP" class="site-logo">
+                <span>MOP <strong>USSEIN</strong></span>
+            </a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="filiere.html" class="active">La Filière</a>
+                <a href="objectifs.html">Objectifs</a>
+                <a href="programme.html">Programme</a>
+                <a href="debouches.html">Débouchés</a>
+                <a href="https://gpe.ussein.sn/" target="_blank" rel="noopener noreferrer" class="btn-portail">Espace Étudiants ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNIÈRE -->
+    <section class="page-banner">
+        <h1>Présentation de la <span>Filière MOP</span></h1>
+        <p>Découvrez la vision, l'ancrage territorial et l'excellence académique du parcours Management des Organisations Paysannes à l'USSEIN.</p>
+    </section>
+
+    <!-- CONTENU DÉTAILLÉ -->
+    <main class="content-container">
+
+        <!-- CONTEXTE ET ENJEUX -->
+        <article class="section-block">
+            <h2>🌱 Un Choix Stratégique pour l'Avenir du Sénégal</h2>
+            <p>
+                En Afrique de l'Ouest, et particulièrement au Sénégal, l'agriculture représente le cœur battant de l'économie et le pilier de la sécurité alimentaire. Cependant, la majorité des producteurs ruraux travaillent de manière isolée ou au sein de structures peu formalisées. Pour faire face aux défis mondiaux tels que le changement climatique, la hausse des prix des intrants et la concurrence des marchés extérieurs, le monde rural a besoin d'une profonde transformation professionnelle.
+            </p>
+            <p>
+                La **Licence en Management des Organisations Paysannes (MOP)** a été spécialement conçue par l'Université Sine Saloum El-Hadj Ibrahima NIASS (USSEIN) pour répondre à cet impératif. Elle ne forme pas uniquement des techniciens agricoles, mais de véritables **cadres managers, conseillers et leaders ruraux** capables de structurer, moderniser et gérer les organisations de producteurs (Groupements d'Intérêt Économique, Coopératives, Unions et Fédérations).
+            </p>
+            <div class="highlight-box">
+                <p>💡 Le constat est clair : une production agricole abondante ne sert à rien sans une organisation solide pour la stocker, la transformer, la financer et la commercialiser à sa juste valeur.</p>
+            </div>
+        </article>
+
+        <!-- L'APPROCHE USSEIN -->
+        <article class="section-block">
+            <h2>🏛️ La Spécificité Pédagogique de l'USSEIN</h2>
+            <p>
+                Choisir la filière MOP à l'USSEIN, c'est intégrer la première université du Sénégal dédiée aux métiers de l'agriculture, de l'environnement et du développement durable. Contrairement aux cursus universitaires purement théoriques, le parcours MOP repose sur une **pédagogie de terrain axée sur les compétences**.
+            </p>
+            <p>
+                Tout au long des trois années de formation, les étudiants sont immergés dans le bassin agricole du Sine Saloum (Kaolack, Fatick, Kaffrine). Ils travaillent directement en lien avec les acteurs locaux, les coopératives régionales (comme les filières Maïs, Arachide, Maraîchage) et les projets de développement international.
+            </p>
+
+            <div class="grid-axes">
+                <div class="axis-card">
+                    <h3>🤝 Gouvernance & Droit</h3>
+                    <p>Compréhension approfondie du cadre légal (OHADA), structuration statutaire des coopératives et prévention des conflits internes.</p>
+                </div>
+                <div class="axis-card">
+                    <h3>📈 Gestion & Économie Rurale</h3>
+                    <p>Gestion financière, comptabilité agricole adaptative, recherche de crédits auprès des SFD et montage de projets rentables.</p>
+                </div>
+                <div class="axis-card">
+                    <h3>🌍 Transition Agroécologique</h3>
+                    <p>Sensibilisation aux pratiques durables, conservation de la fertilité des sols et valorisation des savoirs paysans traditionnels.</p>
+                </div>
+                <div class="axis-card">
+                    <h3>📢 Conseil & Vulgarisation</h3>
+                    <p>Techniques de communication rurale, animation d'ateliers participatifs et accompagnement au changement technologique.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- MESSAGE AUX NOUVEAUX BACHELIERS -->
+        <article class="section-block">
+            <h2>🎓 Message aux Nouveaux Bacheliers</h2>
+            <p>
+                Vous venez d'obtenir votre baccalauréat et vous vous demandez si la filière MOP est faite pour vous ? Si vous êtes passionné par le développement économique de votre pays, si vous souhaitez devenir un acteur clé de la souveraineté alimentaire du Sénégal et si vous aimez allier travail intellectuel et réalités du terrain, **la filière MOP est votre meilleure opportunité**.
+            </p>
+            <p>
+                À la fin de votre cursus, vous ne serez pas de simples chercheurs d'emploi : vous posséderez les compétences opérationnelles pour diriger des coopératives, conseiller des ONG internationales ou créer vos propres entreprises agro-alimentaires.
+            </p>
+        </article>
+
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+        <p>&copy; 2026 MOP USSEIN - Université Sine Saloum El-Hadj Ibrahima NIASS. Tous droits réservés.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #b0bec5;">
+            Créé par <strong>Zacharia Bakary</strong> (<a href="mailto:zackckckaria@gmail.com" style="color: var(--gold); text-decoration: none;">zackckckaria@gmail.com</a>)
+        </p>
+    </footer>
+
+</body>
+</html>
