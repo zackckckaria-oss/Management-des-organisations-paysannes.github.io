@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management des Organisations Paysannes - USSEIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1b4332;       /* Vert forêt profond */
+            --primary-light: #2d6a4f; /* Vert végétation */
+            --accent: #52b788;        /* Vert feuille vif */
+            --gold: #d4af37;          /* Or / Épi de blé USSEIN */
+            --bg-light: #f8faf8;      /* Fond très doux */
+            --text-dark: #1a251e;     /* Texte sombre naturel */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* En-tête de navigation */
+        header {
+            background: rgba(27, 67, 50, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--gold);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .btn-portail {
+            background: linear-gradient(135deg, var(--gold), #b89320);
+            color: var(--primary) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-portail:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Section Banner / Hero */
+        .hero {
+            background: linear-gradient(135deg, rgba(27, 67, 50, 0.92), rgba(45, 106, 79, 0.85)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1350&q=80') center/cover;
+            color: var(--white);
+            padding: 6rem 2rem 8rem 2rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #d8f3dc;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Conteneur principal */
+        .main-container {
+            max-width: 1100px;
+            margin: -4rem auto 4rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent);
+        }
+
+        .card h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Grille des objectifs */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .grid-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .grid-item h3 {
+            color: var(--primary-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Accordéon / Modules */
+        .level-box {
+            background: #f0f7f4;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .level-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            background: var(--white);
+            border: 1px solid var(--accent);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        /* Pied de page */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-top: 4px solid var(--gold);
+        }
+
+        footer p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-text">MOP <span>USSEIN</span></div>
+            <nav>
+                <a href="#filiere">La Filière</a>
+                <a href="#objectifs">Objectifs</a>
+                <a href="#programme">Programme</a>
+                <a href="https://gpe.ussein.sn/" target="_blank" class="btn-portail">Espace Étudiants ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Management des Organisations Paysannes</h1>
+        <p>Université Sine Saloum El-Hadj Ibrahima NIASS — Former les leaders du développement rural et agricole de demain.</p>
+    </section>
+
+    <div class="main-container">
+
+        <section id="filiere" class="card">
+            <h2>🌿 À propos de la Filière</h2>
+            <p>La filière <strong>Management des Organisations Paysannes (MOP)</strong> est dispensée à l'Université Sine Saloum El-Hadj Ibrahima NIASS (USSEIN). Elle est conçue pour former des cadres et experts capables d'accompagner la professionnalisation du monde agricole, de renforcer la gouvernance des structures ruraux et de développer l'agrobusiness au Sénégal et dans la sous-région.</p>
+        </section>
+
+        <section id="objectifs" class="card">
+            <h2>🎯 Axes Stratégiques & Compétences</h2>
+            <div class="grid-4">
+                <div class="grid-item">
+                    <h3>Gouvernance</h3>
+                    <p>Gestion administrative, financière et structuration durable des coopératives agricoles.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Conseil Rural</h3>
+                    <p>Vulgarisation, accompagnement de proximité et méthodes d'andragogie de terrain.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Chaînes de Valeur</h3>
+                    <p>Entrepreneuriat, analyse des filières agropastorales et valorisation du foncier.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Projets & Politiques</h3>
+                    <p>Montage de projets, suivi-évaluation, marketing social et négociation agricole.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="programme" class="card">
+            <h2>📚 Parcours d'Études (Maquette LMD)</h2>
+
+            <div class="level-box">
+                <h3 class="level-title">🌱 Licence 1 (L1) — Fondations & Immersion</h3>
+                <div class="badge-list">
+                    <span class="badge">DOP 1150 : Dével. Rural & OP</span>
+                    <span class="badge">BSA 1151 : Sociologie & Anthropologie</span>
+                    <span class="badge">CAR 1152 : Conseil Agricole</span>
+                    <span class="badge">BCD 1153 : Communication</span>
+                    <span class="badge">COP 1250 : Diagnostic des OP</span>
+                    <span class="badge">CFO 1254 : Comptabilité & Finance</span>
+                </div>
+            </div>
+
+            <div class="level-box">
+                <h3 class="level-title">🌾 Licence 2 (L2) — Structuration & Outils</h3>
+                <div class="badge-list">
+                    <span class="badge">SOP 2350 : Structuration des OP</span>
+                    <span class="badge">GAO 2351 : Gestion RH & Droit</span>
+                    <span class="badge">PAR 2352 : Politiques Agricoles</span>
+                    <span class="badge">TAO 2451 : Projets & Partenariats</span>
+                    <span class="badge">DCV 2452 : Chaînes de Valeurs</span>
+                    <span class="badge">GFA 2453 : Gestion Foncière</span>
+                </div>
+            </div>
+
+            <div class="level-box">
+                <h3 class="level-title">🌳 Licence 3 (L3) — Expertise & Insertion</h3>
+                <div class="badge-list">
+                    <span class="badge">FOP 3550 : Gouvernance des OP</span>
+                    <span class="badge">PSO 3551 : Négociation & Concertation</span>
+                    <span class="badge">GPM 3552 : Marketing Social</span>
+                    <span class="badge">ACP 3555 : Audit Financier</span>
+                    <span class="badge">CSA 3652 : Assurances & Intrants</span>
+                    <span class="badge">RFC 3653 : Rapport de Fin de Cycle</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© USSEIN — Université Sine Saloum El-Hadj Ibrahima NIASS</p>
+        <p style="font-size: 0.85rem; margin-top: 5px; color: var(--gold);">Filière Management des Organisations Paysannes (MOP)</p>
+    </footer>
+
+</body>
+</html>
